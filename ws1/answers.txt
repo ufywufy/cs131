@@ -1,0 +1,12 @@
+T1: cd ~/cs131/ws1 && pwd
+T2: ls ../data
+T3: file logs/app01.log .env
+T4: ls -alhr
+T5: ls -lS logs
+T6: size=1048576 owner=ishigaki-cs11 modified=Jun 12 16:37
+T7: ls data/Data?.csv
+T8: ls [[:upper:]]*
+T9: logs/BACKUP.[0-9][0-9][0-9]
+T10: cp -r data backup; ls backup/data
+T11: mv data/readme.txt data/README.md
+T12: rm -ri backup/data
