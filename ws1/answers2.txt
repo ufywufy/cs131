@@ -1,0 +1,32 @@
+B1: grep '"city":"Santa Barbara"' $BUS
+
+B2: grep -c '"state":"CA"' $BUS
+Option: -c
+
+B3: grep -i 'worth' $REV
+Option: -i
+
+B4: grep -E 'Coffee|Cafe|Café' $BUS
+
+B5: grep -E '"stars":(4\.5|5\.0)' $BUS
+
+B6: grep -E '"stars":5,' $REV
+
+B7: grep -E '[[:alnum:]_.+-]+@[[:alnum:].-]+\.[A-Za-z]{2,}' $REV
+
+B8: grep -E '[0-9]{3}-[0-9]{3}-[0-9]{4}' $REV
+
+B9: grep -E '"name":"P[^"]*' $BUS
+
+B10: grep -ic 'pizza' $REV
+
+B11: grep -in 'service' $REV
+Option: -n
+
+B12: grep -v 'Restaurants' $BUS
+Option: -v
+
+B13: grep '"state":"CA"' $BUS | grep -oE '"review_count":[0-9]+' | grep -oE '[0-9]+' | sort -nr | head -3
+Explanation: Filters California businesses, extracts review_count fields, extracts only the numeric values, sorts numerically in descending order, then displays the top 3.
+
+B14: grep '"city":"Santa Barbara"' $BUS | grep -oE '"name":"[^"]+"' | cut -d'"' -f4 | sort
