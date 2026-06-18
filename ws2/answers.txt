@@ -1,0 +1,15 @@
+Q1: git add notes.md; git commit -m "ws2: add task line"
+Q2: git log --oneline -3
+Q3: bad commit hash = 0b301ae
+Q4: git revert HEAD; grep WRONG notes.md
+Q5: git rm --cached bigdata.bin; echo "bigdata.bin" >> .gitignore; git add .gitignore; git commit --amend; rm bigdata.bin; git push
+Q6: git switch -c feature-summary
+Q7: printf "# Summary\nThis worksheet practices git workflows.\n" > summary.md; git add summary.md; git commit -m "ws2: add summary"
+Q8: git diff main..feature-summary --name-only
+Q9: git switch main; git merge feature-summary; ls summary.md
+Q10: git branch -d feature-summary
+Q11: git merge conflict-branch; conflicted file: summary.md
+Q12: git diff --name-only --diff-filter=U
+Q14: git add summary.md; git commit; git log --oneline -5
+Q15: git fetch origin; git log HEAD..origin/main --oneline
+Q16: git fetch downloads remote changes without merging them; git pull does fetch plus merge into the current branch.
