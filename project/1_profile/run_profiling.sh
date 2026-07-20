@@ -84,31 +84,4 @@ echo
 echo "Command:"
 echo 'time gzip -cd "$DATA_DIR"/*.gz | awk (AI pages)'
 echo
-echo "AI Page Totals"
-
-time gzip -cd "$DATA_DIR"/*.gz |
-awk '
-{
-    if (
-        ($1=="en" || $1=="en.m") &&
-        (
-            $2=="Artificial_intelligence" ||
-            $2=="ChatGPT" ||
-            $2=="OpenAI" ||
-            $2=="Machine_learning" ||
-            $2=="Deep_learning"
-        )
-    ) {
-        views[$2] += $3
-    }
-}
-
-END {
-    for (page in views)
-        print page, views[page]
-}
-' |
-sort
-
-echo
 echo "===== END PROFILING ====="
