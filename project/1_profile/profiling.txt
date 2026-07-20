@@ -1,0 +1,108 @@
+Mon Jul 20 01:29:13 PM PDT 2026
+
+Command:
+time du -ch "$DATA_DIR"/*.gz | tail -1
+
+Dataset Size
+6.1G	total
+
+real	0m0.005s
+user	0m0.002s
+sys	0m0.004s
+
+Command:
+time gzip -cd "$DATA_DIR"/*.gz | wc -l
+
+Total Rows
+764366962
+
+real	4m28.515s
+user	4m38.453s
+sys	0m38.496s
+
+Command:
+time gzip -cd pageviews-20221128-000000.gz | head
+
+First 10 Rows
+aa Main_Page 5 0
+aa User:Korg 1 0
+aa Wikipedia:Community_Portal 1 0
+aa.b User:Nick1915 1 0
+aa.d User:Francisco_Leandro 1 0
+aa.m Main_Page 3 0
+aa.m User:ReyBrujo/Dumps/20070206 1 0
+ab 1060 1 0
+ab 1105 1 0
+ab 1129 1 0
+
+real	0m0.003s
+user	0m0.001s
+sys	0m0.004s
+
+Command:
+time gzip -cd pageviews-20221202-230000.gz | tail
+
+Last 10 Rows
+zu.m Joe_Slovo 2 0
+zu.m Nelson_Mandela 1 0
+zu.m UNelson_Mandela 1 0
+zu.m Ubuciko_bomlomo 1 0
+zu.m Ukudla 1 0
+zu.m Utamatisi 1 0
+zu.m Uvete 1 0
+zu.m XVideos 1 0
+zu.m.b File:Wikistress3D_2_v3.jpg 1 0
+zu.m.b Ikhasi_Elikhulu 2 0
+
+real	0m1.906s
+user	0m2.062s
+sys	0m0.268s
+
+Command:
+time gzip -cd "$DATA_DIR"/*.gz | cut -d" " -f1 | sort | uniq -c | sort -nr | head -20
+
+Top Domain Codes
+133617535 en.m
+124273357 en
+29299115 ja.m
+26319927 ru.m
+26241342 es.m
+23663271 de.m
+22393975 de
+20371269 ja
+19860550 fr.m
+19844842 ru
+18953755 es
+17505114 fr
+16990718 it.m
+13832927 zh.m
+10276445 pt.m
+9815767 fa.m
+9789728 it
+9384453 ar.m
+8445650 pl.m
+8360269 zh
+
+real	11m47.582s
+user	15m26.912s
+sys	1m23.942s
+
+Command:
+time gzip -cd "$DATA_DIR"/*.gz | grep -Ec "^en(\.m)? "
+
+English Rows
+257890892
+
+real	4m30.664s
+user	5m20.659s
+sys	0m36.112s
+
+Command:
+time gzip -cd "$DATA_DIR"/*.gz | awk ...
+
+Total English Views
+1232833553
+
+real	4m35.319s
+user	7m57.502s
+sys	0m25.665s
