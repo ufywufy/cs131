@@ -1,0 +1,62 @@
+Data Files used for Phase 2: 
+(The whole dataset was downloaded as 120 separate zip files. 1 portion is simply a text file containing the data from one zip file or ~150MB.)
+
+Pageviews-000000: First portion of the dataset
+Pageviews-010000: Second portion of the dataset
+Combined.txt: Contains the first and second portions stitched together
+LongerCombined.txt: Contains the first four portions of the dataset
+
+
+
+Excel Failure: Hitting the Row Cap
+(see excelBreaking.png) The first and second parts of the data contain (visibly) about 1 million rows each.
+Therefore, the combined part should contain at least 2 million rows, but we can see that only the first 1 million rows are loaded.
+(The first two portions of the data are probably larger than the row cap, but we needed Combined.txt to definitively prove that a limit was reached)
+
+
+
+Pandas Failure: Memory Explosion
+Reading larger portions of the data using pandas.read_csv() becomes increasingly slow and memory-intensive.
+We can see these effects by slowly scaling up the dataset size that pandas needs to read, as shown below:
+
+Using 1 portion of the data (Pageviews-010000):
+Wall-Clock Time: 7.79 seconds
+DataFrame Memory Usage: 728.64 MB
+
+Using 2 portions (Combined.txt):
+Wall-Clock Time: 15.41 seconds
+DataFrame Memory Usage: 1457.28 MB
+
+Using 4 portions (LongerCombined.txt):
+Wall-Clock Time: 30.73 seconds
+DataFrame Memory Usage: 2914.56 MB
+
+While running pandas on an even larger percentage of the dataset (300 million rows),
+the wall-clock time gets even worse, and Pandas uses up almost all of the system’s RAM:
+Python, because of Pandas, uses ~20k MB of RAM (see taskManager.png)
+
+
+
+Comparing the speed of Command Line vs. Spark when it comes to counting rows:
+
+Command Line (taken from Phase 1): 
+Command: time gzip -cd "$DATA_DIR"/*.gz | wc -l
+real	4m28.515s
+user	4m38.453s
+sys	0m38.496s
+
+PySpark (run locally):
+Tracking using Time Command:
+real	3m3.528s
+user	0m0.303s
+sys	0m0.072s
+
+PySpark (submitted to Dataproc Serverless):
+Tracking using Time Command:
+real	7m10.265s
+user	0m2.922s
+sys	0m2.543s
+
+Tracking from Batch Details (see batchDetails.png):
+Job Execution (Time to reach Succeeded State - Time to reach Running State): 4 minutes, 46.3 seconds 
+Total Time (Time Job reached Server - Time to Completion): 5 minutes, 49.1 seconds 
