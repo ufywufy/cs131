@@ -1,0 +1,1 @@
+ERROR: (gcloud.dataproc.batches.submit.pyspark) INVALID_ARGUMENT: Serverless Spark must have at least 2 executors, but has 1
