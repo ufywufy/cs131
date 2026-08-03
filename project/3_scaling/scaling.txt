@@ -1,0 +1,22 @@
+Dataset:
+Wikipedia Pageviews
+Nov 28 - Dec 2 2022
+120 compressed files
+6.1 GB
+764,366,962 rows
+
+PySpark Runtime
+Serverless Dataproc
+Runtime:
+7m34.773s
+
+Output:
+Top affected AI articles:
+AI_alignment
+Artificial_general_intelligence
+Zero-shot_learning
+Yoshua_Bengio
+Manifold_hypothesis
+
+Results saved to:
+chatgpt_results.csv

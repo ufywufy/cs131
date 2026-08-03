@@ -1,0 +1,57 @@
+Batch [2982894262114f1097a826e969b1786e] submitted.
+WARNING: No runtime version specified. Using the default runtime version. It is recommended to select a specific major.minor runtime version in production, as the default runtime version may change at any time.
+Using the default container image
+Waiting for container log creation
+PYSPARK_PYTHON=/opt/dataproc/conda/bin/python
+Generating /home/spark/.pip/pip.conf
+Configuring index-url as 'https://us-python.pkg.dev/artifact-registry-python-cache/virtual-python/simple/'
+JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64
+SPARK_EXTRA_CLASSPATH=
+:: loading settings :: file = /etc/spark/conf/ivysettings.xml
+26/08/02 19:41:45 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-google-hadoop-file-system.properties,hadoop-metrics2.properties
+26/08/02 19:41:45 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+26/08/02 19:41:45 INFO MetricsSystemImpl: google-hadoop-file-system metrics system started
+
+================================================================================
+TOP 5 MOST AFFECTED AI ARTICLES (Based on Average Daily View Difference)
+================================================================================
++-------------------------------+----------+---------+----------+------------------+
+|Article                        |Before_Avg|After_Avg|Difference|Pct_Change        |
++-------------------------------+----------+---------+----------+------------------+
+|AI_alignment                   |177.5     |316.0    |138.5     |78.0281690140845  |
+|Artificial_general_intelligence|1011.5    |1091.5   |80.0      |7.909045971329709 |
+|Zero-shot_learning             |376.0     |453.5    |77.5      |20.611702127659576|
+|Yoshua_Bengio                  |206.0     |257.5    |51.5      |25.0              |
+|Manifold_hypothesis            |39.5      |86.0     |46.5      |117.72151898734178|
++-------------------------------+----------+---------+----------+------------------+
+only showing top 5 rows
+
+================================================================================
+OVERALL MARKET / AGGREGATE SUMMARY ACROSS ALL TARGET ARTICLES
+================================================================================
+Total Daily Average Views Before ChatGPT: 60,966.00
+Total Daily Average Views After ChatGPT:  55,843.50
+Overall Net Volume Percentage Change:     -8.40%
+Mean Percentage Change Across Articles:   -1.16%
+================================================================================
+
+26/08/02 19:47:52 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+Results successfully saved as CSV to gs://emily-cs131/phase3/chatgpt_impact_csv
+Batch [2982894262114f1097a826e969b1786e] finished.
+metadata:
+  '@type': type.googleapis.com/google.cloud.dataproc.v1.BatchOperationMetadata
+  batch: projects/cs131-503301/locations/us-west1/batches/2982894262114f1097a826e969b1786e
+  batchUuid: 42d22614-f91f-4b8d-9ef4-5a75152b6e2c
+  createTime: '2026-08-02T19:40:33.759324Z'
+  description: Batch
+  labels:
+    goog-dataproc-batch-id: 2982894262114f1097a826e969b1786e
+    goog-dataproc-batch-uuid: 42d22614-f91f-4b8d-9ef4-5a75152b6e2c
+    goog-dataproc-drz-resource-uuid: batch-42d22614-f91f-4b8d-9ef4-5a75152b6e2c
+    goog-dataproc-location: us-west1
+  operationType: BATCH
+  warnings:
+  - No runtime version specified. Using the default runtime version. It is recommended
+    to select a specific major.minor runtime version in production, as the default
+    runtime version may change at any time.
+name: projects/cs131-503301/regions/us-west1/operations/535bf691-77c6-3380-84f7-9511fadc51f5
